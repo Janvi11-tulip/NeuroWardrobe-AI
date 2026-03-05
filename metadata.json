@@ -1,0 +1,5 @@
+{
+  "name": "NeuroWardrobe AI",
+  "description": "Advanced AI Fashion Intelligence Platform for personalized styling, color analysis, and wardrobe management.",
+  "requestFramePermissions": ["camera", "geolocation"]
+}
