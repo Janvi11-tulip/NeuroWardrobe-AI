@@ -25,7 +25,7 @@ const retryWithBackoff = async <T>(fn: () => Promise<T>, maxRetries = 3): Promis
       lastError = error;
       const errorMsg = error.message || "";
       if (errorMsg.includes('429') || errorMsg.includes('RESOURCE_EXHAUSTED')) {
-        const delay = Math.pow(2, i) * 2000 + Math.random() * 1000;
+        const delay = Math.pow(2, i) * 5000 + Math.random() * 1000;
         console.warn(`Gemini API 429 detected. Retrying in ${Math.round(delay)}ms... (Attempt ${i + 1}/${maxRetries})`);
         await new Promise(resolve => setTimeout(resolve, delay));
         continue;
