@@ -2,7 +2,7 @@ import { GoogleGenAI, Type } from "@google/genai";
 import { AnalysisResults, OutfitRequest, OutfitResponse, WardrobeItem, ShoppingRecommendation, MarketplaceProduct } from "../types";
 
 const getAI = () => {
-  const apiKey = process.env.GEMINI_API_KEY;
+  const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
   if (!apiKey || apiKey === 'undefined') {
     throw new Error("Gemini API Key is missing. Please configure it in the AI Studio Secrets panel.");
   }
